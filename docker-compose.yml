@@ -1,0 +1,21 @@
+version: "3"
+services:
+  deeplearning-framework-trend-forecast:
+    command: jupyter-lab --ip 0.0.0.0 --allow-root --NotebookApp.token=''
+    build: .
+    volumes:
+      - ./src:/work/src
+      - ./data:/work/data
+      - ./notebooks:/work/notebooks
+      - ./result:/work/result
+    ports:
+      - 8888:8888
+    privileged: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

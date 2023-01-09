@@ -1,0 +1,10 @@
+{
+  "name": "deeplearning-framework-share-forecast",
+  "forwardPorts": [8888],
+  "dockerFile": "../Dockerfile",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}
